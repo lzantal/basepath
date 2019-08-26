@@ -1,14 +1,13 @@
 """
-Simple base path function to avoid hardcoding file path
+Simple base path function to avoid hardcoding project file paths
 """
+from os.path import join
 
-
-def basepath(base):
-    def full_path(tp, *args, **kwargs):
-        extb = '/'.join(args)
-        if extb:
-            tp = '%s/%s' % (extb, tp)
+def bpath(base):
+    def _bpath(tp='', *args, **kwargs):
+        if args:
+            tp = join(*args, tp)
         if kwargs.get('root', False):
-            return '%s/%s' % (kwargs['root'], tp)
-        return '%s/%s' % (base, tp)
-    return full_path
+            return join(kwargs['root'], tp)
+        return join(base, tp)
+    return _bpath

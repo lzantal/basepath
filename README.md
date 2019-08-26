@@ -8,7 +8,7 @@ Add more subfolders as needed or new root folder without over writing the origin
 ## Usage:
 ```
 from basepath import bpath
-tp = basepath('www')
+tp = bpath('www')
 ```
 
 Call it with a file name

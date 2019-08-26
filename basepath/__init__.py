@@ -1,3 +1,3 @@
 VERSION = (0, 6, 1)
 
-from .basepath import basepath
+from .basepath import bpath

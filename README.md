@@ -7,6 +7,7 @@ Add more subfolders as needed or new root folder without over writing the origin
 
 ## Usage:
 ```
+from basepath import bpath
 tp = basepath('www')
 ```
 
@@ -28,13 +29,13 @@ tp('index.html','view_error','subfolder2','subfolderN')
 'www/view_error/subfolder2/subfolderN/index.html'
 ```
 
-To get only the full path without file call it with an empty string
+To get the current base path call the function without arguments
 ```
-tp('')
+tp()
 'www/'
 ```
 
-You can also add subfolders without file
+You can add subfolders to base path without a file by passing in an empty string
 ```
 tp('','subfolder','another')
 'www/subfolder/another/'
